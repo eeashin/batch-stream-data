@@ -1,0 +1,20 @@
+data_model_csv:
+  listing_id,id,date,reviewer_id,reviewer_name,comments
+  1489424,7208791,2013-09-10,5817914,Hilary,Efrat and Dan were very welcoming and accommodating.
+# OR
+data_model_json:
+  {
+  "listing_id": "STRING",
+  "id": "STRING",
+  "reviewer_id": "STRING",
+  "reviewer_name": "STRING",
+  "comments": "STRING"
+  }
+# IF client place cotent as file
+data_file_naming:
+  reviews.csv
+# Message limit
+max_messages:
+  50,000 #upgradable / pay-as-go
+
+  

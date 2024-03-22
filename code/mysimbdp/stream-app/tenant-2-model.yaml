@@ -1,0 +1,22 @@
+data_model_csv:
+  time,readable_time,acceleration,acceleration_x,acceleration_y,acceleration_z,battery,humidity,pressure,temperature,dev-id
+  1523145619153,2018-04-08T00:00:19.153000Z,1014.1558065701739,-44,324,960,3007,20.5,1017.15,28.37,C2:9A:9F:E5:58:27
+# OR similar JSON Model
+data_model_json:
+  {
+  "time": "STRING",
+  "readable_time": "STRING",
+  "acceleration": "STRING",
+  "acceleration_x": "STRING",
+  "acceleration_y": "STRING",
+  "humidity": "STRING",
+  "pressure": "STRING",
+  "temperature": "STRING",
+  "dev_id": "STRING"
+  }
+# IF client place cotent as file
+data_file_naming:
+  ruuvitag.csv
+# Message limit
+max_messages:
+  50,000 #upgradable / pay-as-go
