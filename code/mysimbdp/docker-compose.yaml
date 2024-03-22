@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+  mongo-config:
+    hostname: 'mongo-config'
+    container_name: mongo-config
+    image: mongo:latest
+    restart: on-failure
+    command: mongod --auth --port 27017 --configsvr --replSet mongo-configserver --dbpath /data/db --keyFile /mongodb.key
+    expose: 
+      - 27017
+    ports: 
+      - 10001:27017 
+    volumes:
+      - ./mongo/mongodb.key:/mongodb.key
+      - ./mongo/config.init.js:/config.init.js
+      - ./mongo/mongodb/config:/data/db
+
+  mongo-shard-1:
+    hostname: 'mongo-shard-1'
+    container_name: mongo-shard-1
+    image: mongo:latest
+    restart: on-failure
+    command: mongod --auth --port 27017 --shardsvr --replSet mongo-shard-01 --dbpath /data/db --keyFile /mongodb.key
+    expose: 
+        - 27017
+    ports: 
+        - 20001:27017
+    volumes:
+        - ./mongo/mongodb.key:/mongodb.key
+        - ./mongo/shardrs.init.js:/shardrs.init.js
+        - ./mongo/mongodb/shard-1:/data/db
+  
+  mongo-shard-2:
+    hostname: 'mongo-shard-2'
+    container_name: mongo-shard-2
+    image: mongo:latest
+    restart: on-failure
+    command: mongod --auth --port 27017 --shardsvr --replSet mongo-shard-01 --dbpath /data/db --keyFile /mongodb.key
+    expose:
+      - 27017
+    ports:
+      - 20002:27017
+    volumes:
+      - ./mongo/mongodb.key:/mongodb.key
+      - ./mongo/shardrs.init.js:/shardrs.init.js
+      - ./mongo/mongodb/shard-2:/data/db
+
+  mongo-router:
+    hostname: 'mongo-router'
+    container_name: mongo-router
+    image: mongo:latest
+    restart: on-failure
+    command: mongos --bind_ip 0.0.0.0 --port 27017 --configdb mongo-configserver/mongo-config:27017 --keyFile /mongodb.key
+    expose:
+      - 27017
+    ports:
+      - 30000:27017
+    volumes:
+      - ./mongo/mongodb.key:/mongodb.key
+      - ./mongo/router.init.js:/router.init.js
+      - ./mongo/user.init.js:/user.init.js
+      - ./mongo/enable-shard.js:/enable-shard.js
+      - ./mongo/mongodb/router:/data/db
+    depends_on:
+      - mongo-config
+      - mongo-shard-1
+      - mongo-shard-2
