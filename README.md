@@ -6,9 +6,8 @@
 
 ```
 .
-├── AssignmentGuideline.md
+├── LICENSE
 ├── README.md
-├── assignment-git.log
 ├── code
 │   ├── README.md
 │   └── mysimbdp
@@ -38,46 +37,41 @@
 ├── data
 │   └── client-staging-input-directory
 │       ├── processed
+│       │   └── reviews.csv
 │       ├── reviews.csv
 │       └── ruuvitag.csv
-├── demolink.txt
 ├── logs
 │   ├── batch_log_batch-topic-1.csv
 │   ├── batch_log_batch-topic-2.csv
 │   ├── stream_log_stream-topic-1.csv
 │   └── stream_log_stream-topic-2.csv
-├── reports
-│   ├── Assignment-2-Deployment.md
-│   ├── Assignment-2-report.md
-│   └── resources
-│       ├── 1-data-wrangling.png
-│       ├── 2-data-wrangling.png
-│       ├── Screenshot 2024-03-14 at 12.59.38 PM.png
-│       ├── batch-log.png
-│       ├── confluent-up.png
-│       ├── data-dictionary.png
-│       ├── dynamic-allocation.png
-│       ├── kafka-UI.png
-│       ├── kafka-topics.png
-│       ├── log-monitor.png
-│       ├── mysimbdp.png
-│       ├── overview.png
-│       ├── part-1-arch.png
-│       ├── part-2-arch.png
-│       ├── processed.png
-│       ├── resources-overview.png
-│       ├── spark-UI.png
-│       ├── spark-up.png
-│       ├── stream-1-const.png
-│       ├── stream-2-const.png
-│       ├── stream-ingest.png
-│       ├── stream-log.png
-│       ├── stream-log2.png
-│       ├── stream-toic-msg.png
-│       ├── tenant-1-const.png
-│       ├── tenant-2-const.png
-│       └── violation.png
-├── selfgrading.csv
-├── submitter.csv
-└── violations.md
+└── reports
+    ├── deployment.md
+    ├── report.md
+    └── resources
+        ├── 1-data-wrangling.png
+        ├── 2-data-wrangling.png
+        ├── Screenshot 2024-03-14 at 12.59.38 PM.png
+        ├── batch-log.png
+        ├── confluent-up.png
+        ├── data-dictionary.png
+        ├── dynamic-allocation.png
+        ├── kafka-UI.png
+        ├── kafka-topics.png
+        ├── log-monitor.png
+        ├── mysimbdp.png
+        ├── overview.png
+        ├── part-1-arch.png
+        ├── part-2-arch.png
+        ├── processed.png
+        ├── resources-overview.png
+        ├── spark-UI.png
+        ├── spark-up.png
+        ├── stream-1-const.png
+        ├── stream-2-const.png
+        ├── stream-ingest.png
+        ├── stream-log.png
+        ├── stream-log2.png
+        ├── stream-toic-msg.png
+        └── violation.png
 ```
