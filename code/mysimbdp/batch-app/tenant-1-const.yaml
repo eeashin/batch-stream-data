@@ -1,0 +1,10 @@
+  file-format: csv
+  file-header: true
+  file-size: 7000000 
+  file-name-prefix: reviews
+  header-structure: listing_id,
+                    id,date,
+                    reviewer_id,
+                    reviewer_name,
+                    comments
+

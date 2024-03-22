@@ -1,0 +1,16 @@
+  file-format: csv
+  file-header: true
+  file-size: 7000000 
+  file-name-prefix: ruuvitag
+  header-structure: time,
+                    readable_time,
+                    acceleration,
+                    acceleration_x,
+                    acceleration_y,
+                    acceleration_z,
+                    battery,humidity,
+                    pressure,
+                    temperature,
+                    dev-id
+
+                    
