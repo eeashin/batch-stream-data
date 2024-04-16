@@ -4,4 +4,3 @@ venv/
 __MACOSX/
 kafka-cluster/
 mongodb/
-confluent*
